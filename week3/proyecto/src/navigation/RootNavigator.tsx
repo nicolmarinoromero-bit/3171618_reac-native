@@ -14,22 +14,9 @@ const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 
 function HomeStackNavigator() {
   return (
-    <HomeStack.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: COLORS.primary },
-        headerTintColor: '#fff',
-      }}
-    >
-      <HomeStack.Screen
-        name="HomeList"
-        component={HomeScreen}
-        options={{ title: 'Auditorías' }}
-      />
-      <HomeStack.Screen
-        name="HomeDetail"
-        component={DetailScreen}
-        options={{ title: 'Detalle' }}
-      />
+    <HomeStack.Navigator screenOptions={{ headerStyle: { backgroundColor: COLORS.primary }, headerTintColor: '#fff' }}>
+      <HomeStack.Screen name="HomeList" component={HomeScreen} options={{ title: 'Auditorías' }} />
+      <HomeStack.Screen name="HomeDetail" component={DetailScreen} options={{ title: 'Detalle' }} />
     </HomeStack.Navigator>
   );
 }
@@ -41,14 +28,11 @@ export default function RootNavigator() {
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName: keyof typeof Ionicons.glyphMap = 'document-text';
-            if (route.name === 'HomeTab') {
-              iconName = focused ? 'home' : 'home-outline';
-            } else if (route.name === 'Favorites') {
-              iconName = focused ? 'heart' : 'heart-outline';
-            }
+            if (route.name === 'HomeTab') iconName = focused ? 'home' : 'home-outline';
+            else if (route.name === 'Favorites') iconName = focused ? 'heart' : 'heart-outline';
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: COLORS.tabActive,
+          tabBarActiveTintColor: '#61DAFB',
           tabBarInactiveTintColor: 'gray',
           headerShown: false,
         })}

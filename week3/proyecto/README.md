@@ -1,26 +1,17 @@
 # 📋 Auditoría Nav – Semana 03 (React Navigation 7)
 
-## 🏛️ Dominio: Empresa de Auditoría
+## Dominio: Empresa de Auditoría
 
-Aplicación móvil que implementa **navegación avanzada** con React Navigation 7, aplicada a la gestión de auditorías. Permite:
+Aplicación con navegación completa: Tab Navigator + Stack anidado. Permite listar auditorías y ver detalle.
 
-- Ver una lista de auditorías (pestaña **Inicio**).
-- Tocar cualquier auditoría para ver su **detalle completo** (stack anidado).
-- Ver una lista estática de **auditorías favoritas** (pestaña **Favoritos**).
+## ✅ Requisitos cumplidos
+- Tab Navigator (Inicio y Favoritos)
+- Stack anidado en Inicio (lista → detalle)
+- Parámetros tipados (id y name)
+- Iconos con Ionicons, color activo #61DAFB
+- TypeScript sin any
 
-## 🧭 Estructura de navegación
-
-- **Tab Navigator** (inferior) con dos pestañas:
-  - `Inicio` → Contiene un **Stack Navigator** anidado (lista → detalle).
-  - `Favoritos` → Pantalla independiente.
-- **Stack anidado** dentro de `Inicio`:
-  - `HomeList` (lista de auditorías)
-  - `HomeDetail` (detalle con parámetros `id` y `name`)
-- **Iconos**: `@expo/vector-icons` (Ionicons) con color activo `#61DAFB`.
-
-## 🚀 Instalación y ejecución
-
+## 🚀 Ejecutar
 ```bash
-cd week3/proyecto
 pnpm install
-npx expo start
+pnpm start
